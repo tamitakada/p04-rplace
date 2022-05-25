@@ -1,10 +1,10 @@
 # My Space by TilesStyle
 
 ## Roster
-- Liesel Wong:  
-- Shyne Choi:  
-- Emma Buller:  
-- Tami Takada: PM  
+- Liesel Wong: Routing, Websockets  
+- Shyne Choi: Sass/CSS, JS, Websockets  
+- Emma Buller: Sass/CSS, JS, Websockets, Droplet  
+- Tami Takada: PM, Database, Websockets, Droplet  
 
 ## Description
 My Space is a replica of [r/place](https://www.reddit.com/r/place/) but with a 10 second timer (for easier demo).
