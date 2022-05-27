@@ -9,3 +9,6 @@ shyneC -- 2022-05-27 08:22
 
 shyneC -- 2022-05-27 08:29
 - Added routing to and blank login.html
+
+emmaB -- 2022-05-27 08:29
+- Added static files
