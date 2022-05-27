@@ -3,3 +3,6 @@ tamiT -- 2022-05-27 07:58
 
 emmaB -- 2022-05-27 08:12
 - Added canvas to index
+
+shyneC -- 2022-05-27 08:22
+- Added to project description
