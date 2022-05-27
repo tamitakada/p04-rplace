@@ -1,2 +1,14 @@
-tamiT -- 2022-05-27
+tamiT -- 2022-05-27 07:58
 - Added reach goals to DD
+
+emmaB -- 2022-05-27 08:12
+- Added canvas to index
+
+shyneC -- 2022-05-27 08:22
+- Added to project description
+
+shyneC -- 2022-05-27 08:29
+- Added routing to and blank login.html
+
+emmaB -- 2022-05-27 08:29
+- Added static files
