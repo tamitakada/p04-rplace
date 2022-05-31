@@ -45,10 +45,6 @@ def register():
 	return render_template('register.html')
 
 if __name__ == '__main__':
-        app.debug = True
-        app.run(host="localhost", debug=True)
-
-if __name__ == '__main__':
         database.db_setup()
         app.debug = True
         app.run(host="localhost", debug=True)
