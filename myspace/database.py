@@ -49,9 +49,16 @@ def generate_unique_id(table: str):
     return item_id
 
 
-def add_user(username: str, password: str):
+"""
+    Returns:
+        0 - Failed to add user (non unique username)
+        1 - Add user success
+"""
+def attempt_add_user(username: str, password: str):
     db = get_db()
     c = db.cursor()
+    
+    if find_user_by_username(username): return 0
 
     user_id = generate_unique_id("users")
     salt = os.urandom(32)
@@ -68,6 +75,8 @@ def add_user(username: str, password: str):
 
     db.commit()
     db.close()
+    
+    return 1
 
 
 """
