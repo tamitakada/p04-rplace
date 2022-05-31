@@ -25,3 +25,6 @@ shyneC -- 2022-05-31 08:12
 
 shyneC -- 2022-05-31 08:31
 - Started login/register
+
+emmaB -- 2022-05-31 10:44
+Started creating navbar base file
