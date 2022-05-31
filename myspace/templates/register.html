@@ -1,0 +1,23 @@
+<!-- tilesstyle (Tami Takada, Liesel Wong, Shyne Choi, Emma Buller)
+SoftDev
+P4 -- Le Fin (Final Project)
+2022-06-26 -->
+
+<html lang="en">
+  <!-- HTML file for exploring JavaScript interactions with the DOM -->
+
+  <head>
+    <meta charset="utf-8">
+    <title>My Space</title>
+  </head>
+  <body>
+    <h1> Welcome to My Space! </h1>
+    <h3> Register below </h3>
+    <form action="/authenticate" method="POST">
+   Username: <input type="text" name="register_username"> <br>
+   Password: <input type="password" name="register_password"> <br>
+   <input type="submit" name="sub1" value="Register">
+    </form>
+      Already have an account? <a href="{{ url_for('login') }}">Login!</a>
+    </body>
+</html>
