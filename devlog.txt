@@ -28,3 +28,6 @@ shyneC -- 2022-05-31 08:31
 
 emmaB -- 2022-05-31 10:44
 Started creating navbar base file
+
+emmaB -- 2022-05-31 14:34
+Fixed padding issues in navbar kind of
