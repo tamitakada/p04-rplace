@@ -13,6 +13,10 @@ shyneC -- 2022-05-27 08:29
 emmaB -- 2022-05-27 08:29
 - Added static files
 
+tamiT -- 2022-05-27 08:30
+- Added database tables
+- Added create/find user and attempt login functions 
+
 emmaB -- 2022-05-27 08:39
 - Added to login
 
