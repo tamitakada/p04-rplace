@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request
+import database
 
 
 app = Flask(__name__)
@@ -16,5 +17,6 @@ def register():
 	return render_template('register.html')
 
 if __name__ == '__main__':
+        database.db_setup()
         app.debug = True
         app.run(host="localhost", debug=True)
