@@ -13,7 +13,8 @@ P4 -- Le Fin (Final Project)
   <body>
     <h1> Welcome to My Space! </h1>
     <h3> Login below </h3>
-    <form action="/authenticate" method="POST">
+    <h4 style="color: red">{{ error }}</h4>
+    <form action="/login" method="POST">
    Username: <input type="text" name="login_username"> <br>
    Password: <input type="password" name="login_password"> <br>
    <input type="submit" name="sub1" value="Login">
