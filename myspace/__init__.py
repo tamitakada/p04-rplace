@@ -11,6 +11,11 @@ app.secret_key = urandom(32)
 def index():
 	return render_template('index.html')
 
+@app.route('/edit')
+def edit():
+	if session.get('username'): return render_template('edit.html')
+	else: return redirect('/login')
+
 @app.route('/login', methods=['GET','POST'])
 def login():
 	if request.method == "POST":
