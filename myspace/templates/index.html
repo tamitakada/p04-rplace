@@ -3,16 +3,10 @@ SoftDev
 P4 -- Le Fin (Final Project)
 2022-06-26 -->
 
-<html lang="en">
-  <!-- HTML file for exploring JavaScript interactions with the DOM -->
+  {% extends "base.html" %}
+  {% block title %}My Space{% endblock %}
+  {% block content %}
 
-  <head>
-    <meta charset="utf-8">
-    <title>My Space</title>
-  </head>
-  <style>
-    #slate { border: 1px solid black}
-  </style>
   <h1> MY SPACE</h1>
   <h2> canvas</h2>
   <div>
@@ -20,4 +14,5 @@ P4 -- Le Fin (Final Project)
       dis dat alt txt tho
     </canvas>
   </div>
-</html>
+
+{% endblock %}

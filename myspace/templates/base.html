@@ -2,15 +2,14 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>placeholder</title>
-    <link rel="stylesheet" href="../static/css/output.css">
+    <title>{%block title%} {% endblock %}</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/output.css')}}">
     </head>
-  <body>
   <div class="nav-bar">
-    <ul>
-      <li> <a href="#">Login</li>
-      <li> <a href="#">Edit</li>
-      </ul>
+    <nav>
+      <a href="{{ url_for('login')}}">Login</a>
+      <a href="#">Edit</a>
+    </nav>
     </div>
-    </body>
+    {% block content %}{% endblock %}
   </html>

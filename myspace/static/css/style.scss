@@ -1,21 +1,13 @@
 .nav-bar{
-  ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333;
-  }
-  li {
-    float: left;
-    a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding-right: 14px;
-    padding-top: 6px;
-    padding-bottom: 8px;
-    text-decoration: none;
+  nav {
+    background-color: #f24201;
+    padding: 14px 16px;
+    a{
+      color: white;
+      padding: 8px;
     }
   }
+}
+canvas {
+border: 1px solid black
 }

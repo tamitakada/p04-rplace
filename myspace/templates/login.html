@@ -3,14 +3,10 @@ SoftDev
 P4 -- Le Fin (Final Project)
 2022-06-26 -->
 
-<html lang="en">
-  <!-- HTML file for exploring JavaScript interactions with the DOM -->
+{% extends "base.html" %}
+{% block title %}Login to My Space{% endblock %}
+{% block content %}
 
-  <head>
-    <meta charset="utf-8">
-    <title>My Space</title>
-  </head>
-  <body>
     <h1> Welcome to My Space! </h1>
     <h3> Login below </h3>
     <form action="/authenticate" method="POST">
@@ -19,5 +15,4 @@ P4 -- Le Fin (Final Project)
    <input type="submit" name="sub1" value="Login">
     </form>
       Not a user? <a href="{{ url_for('register') }}">Register!</a>
-    </body>
-</html>
+{%endblock%}
