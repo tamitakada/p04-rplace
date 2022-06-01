@@ -13,7 +13,8 @@ P4 -- Le Fin (Final Project)
   <body>
     <h1> Welcome to My Space! </h1>
     <h3> Register below </h3>
-    <form action="/authenticate" method="POST">
+    <h4 style="color: red">{{ error }}</h4>
+    <form action="/register" method="POST">
    Username: <input type="text" name="register_username"> <br>
    Password: <input type="password" name="register_password"> <br>
    <input type="submit" name="sub1" value="Register">
