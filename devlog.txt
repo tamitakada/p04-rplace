@@ -43,3 +43,7 @@ Can draw on canvas and change color
 
 emmaB -- 2022-06-02 11:10
 Started the toggling process of when you can draw on the canvas
+
+shyneC -- 2022-06-02 18:40
+- Made pixels snap to grid
+- Added time restriction to drawing on canvas (10 seconds)
