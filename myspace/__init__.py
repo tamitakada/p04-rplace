@@ -1,11 +1,49 @@
+from threading import Lock
 from os import urandom
 
 from flask import Flask, render_template, request, redirect, session
+from flask_socketio import SocketIO, emit, join_room, leave_room, \
+    close_room, rooms, disconnect
+
 import database
 
 
 app = Flask(__name__)
 app.secret_key = urandom(32)
+socketio = SocketIO(app, async_mode=None)
+thread = None
+thread_lock = Lock()
+
+
+def background_thread():
+    """Example of how to send server generated events to clients."""
+    count = 0
+    while True:
+        socketio.sleep(10)
+        count += 1
+        socketio.emit('my_response',
+                      {'data': 'Server generated event', 'count': count})
+
+@socketio.event
+def my_broadcast_event(message):
+    print(message)
+    session['receive_count'] = session.get('receive_count', 0) + 1
+    emit('my_response',
+         {'data': message['data'], 'count': session['receive_count']},
+         broadcast=True)
+
+@socketio.event
+def my_ping():
+    emit('my_pong')
+
+
+@socketio.event
+def connect():
+    global thread
+    with thread_lock:
+        if thread is None:
+            thread = socketio.start_background_task(background_thread)
+    emit('my_response', {'data': 'Connected', 'count': 0})
 
 @app.route('/')
 def index():
@@ -57,4 +95,4 @@ def register():
 if __name__ == '__main__':
         database.db_setup()
         app.debug = True
-        app.run(host="localhost", debug=True)
+        socketio.run(app)
