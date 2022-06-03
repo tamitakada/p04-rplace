@@ -9,11 +9,22 @@ P4 -- Le Fin (Final Project)
 
   <h1> MY SPACE</h1>
   <h2> canvas</h2>
-  <div>
+  <div class="flex-container">
     <canvas height="600" width="600" id="slate">
       dis dat alt txt tho
     </canvas>
+    <div style="flex-basis:300px">
     <button onClick="changeColor('blue')">Blue</button>
+    <button onClick="changeColor('blue')">Blue</button> 
+    <button onClick="changeColor('blue')">Blue</button>
+    <button onClick="changeColor('blue')">Blue</button>
+    <button onClick="changeColor('blue')">Blue</button>
+    <button onClick="changeColor('blue')">Blue</button>
+    <button onClick="changeColor('blue')">Blue</button>
+    <button onClick="changeColor('blue')">Blue</button>
+    <button onClick="changeColor('blue')">Blue</button>
+    <button onClick="changeColor('blue')">Blue</button>
+    </div>
   </div>
 <script src="{{ url_for('static', filename='js/canvas.js') }}"></script>
 {% endblock %}

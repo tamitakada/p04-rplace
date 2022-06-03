@@ -47,3 +47,8 @@ Started the toggling process of when you can draw on the canvas
 shyneC -- 2022-06-02 18:40
 - Made pixels snap to grid
 - Added time restriction to drawing on canvas (10 seconds)
+
+emmaB -- 2022-06-03 08:37
+- Changed links in the navbar
+- Added css to index to format the buttons nicely
+- Started adding new colors for buttons
