@@ -21,6 +21,8 @@ canvas {
   border: 2px solid black;
   color: white;
   padding: 40px 40px;
+  width: 125px;
+  height: 125px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
