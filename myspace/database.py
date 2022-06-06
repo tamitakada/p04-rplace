@@ -127,6 +127,20 @@ def upsert_pixel(x: int, y: int, color: str):
     db.commit()
     db.close()
     
+def get_all_pixels():
+    db = get_db()
+    c = db.cursor()
+
+    command = "SELECT * FROM canvas"
+    pixels = c.execute(command).fetchall()
+
+    db.close()
+    
+    for i in range(len(pixels)):
+        pixels[i] = [pixels[i][1], pixels[i][2], pixels[i][3]]
+
+    return pixels
+    
 def find_pixel_from_coordinates(x: int, y: int):
     db = get_db()
     c = db.cursor()
