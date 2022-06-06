@@ -34,3 +34,16 @@ Fixed padding issues in navbar kind of
 
 emmaB -- 2022-06-01 08:33
 Added base file to easily add navbar to html files
+
+shyneC -- 2022-06-02 08:24
+- Specific way of choosing color on design doc
+
+emmaB - 2022-06-02 08:36
+Can draw on canvas and change color
+
+emmaB -- 2022-06-02 11:10
+Started the toggling process of when you can draw on the canvas
+
+shyneC -- 2022-06-02 18:40
+- Made pixels snap to grid
+- Added time restriction to drawing on canvas (10 seconds)
