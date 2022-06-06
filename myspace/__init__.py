@@ -2,8 +2,7 @@ from threading import Lock
 from os import urandom
 
 from flask import Flask, render_template, request, redirect, session
-from flask_socketio import SocketIO, emit, join_room, leave_room, \
-    close_room, rooms, disconnect
+from flask_socketio import SocketIO, emit, disconnect
 
 import database
 
@@ -26,7 +25,6 @@ def background_thread():
 
 @socketio.event
 def my_broadcast_event(message):
-    print(message)
     session['receive_count'] = session.get('receive_count', 0) + 1
     emit('my_response',
          {'data': message['data'], 'count': session['receive_count']},
@@ -45,9 +43,18 @@ def connect():
             thread = socketio.start_background_task(background_thread)
     emit('my_response', {'data': 'Connected', 'count': 0})
 
-@app.route('/')
+@app.route('/', methods=['GET','POST'])
 def index():
-	return render_template('index.html')
+	pixels = database.get_all_pixels()
+
+	if request.method == "POST":
+		pixelStr = request.form['broadcast_data']
+		pixelItems = pixelStr.split(', ')
+		x = pixelItems[0][1:]
+		y = pixelItems[1]
+		color = pixelItems[2][:-1]
+		database.upsert_pixel(int(x), int(y), color)
+	return render_template('index.html', pixels=pixels)
 
 @app.route('/edit')
 def edit():
