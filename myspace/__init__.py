@@ -68,14 +68,14 @@ def login():
 		password = request.form['login_password']
 		error = database.attempt_login(user, password)
 		if error == 2:
-			session['username'] = user 
+			session['username'] = user
 			return redirect("/")
-		elif error == 1: 
+		elif error == 1:
 			return render_template('login.html', error="Wrong password")
 		else:
 			return render_template('login.html', error="No user with that username found")
 	elif request.method == "GET":
-		if (session.get('username') is not None): return redirect("/")
+		if loggedin(): return redirect("/")
 		else: return render_template('login.html')
 
 @app.route('/register', methods=['GET','POST'])
@@ -86,18 +86,21 @@ def register():
 		error = ""
 		if not new_user: error = "There was no username entered!"
 		elif not new_pass: error = "There was no password entered!"
-	 	
+
 		if database.attempt_add_user(new_user, new_pass) == 1:
 			session['username'] = new_user
 			return redirect("/")
 		else: error = "Username is not unique"
-		
+
 		return render_template('register.html', error=error)
 	elif request.method == "GET":
-		if (session.get('username') is not None):
+		if loggedin():
 			return redirect("/")
 		else: return render_template('register.html')
 	return render_template('register.html')
+
+def loggedin():
+	return 'username' in session.keys()
 
 if __name__ == '__main__':
         database.db_setup()
