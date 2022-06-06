@@ -7,28 +7,46 @@ var ctx = c.getContext("2d");
 var color = "red";
 var mode = true;
 
+var pixelDataBroadcast = document.getElementById("broadcast_data");
+var pixelForm = document.getElementById("broadcast");
+
 var drawRect = function(e) {
   checkTime()
   if (mode) {
     var mouseX = e.offsetX;
     var mouseY = e.offsetY;
     console.log("mouseclick registered at ", mouseX, mouseY);
-
-    var fillingRect = new Path2D(); //instead of beginPath
-    // stays within grid
+    
     mouseX -= mouseX % 10;
     mouseY -= mouseY % 10;
-    fillingRect.moveTo(mouseX, mouseY);
-    fillingRect.lineTo(mouseX+10, mouseY);
-    fillingRect.lineTo(mouseX+10, mouseY+10);
-    fillingRect.lineTo(mouseX, mouseY+10);
-    fillingRect.lineTo(mouseX, mouseY);
-    fillingRect.closePath();
+    
+    drawRectFromPoint(mouseX, mouseY, color);
+    
+    pixelInfo = `(${x}, ${y}, ${color})`;
+    console.log(pixelInfo);
+    pixelDataBroadcast.value = pixelInfo;
+    pixelForm.submit();
+  }
+}
 
-    ctx.fillStyle = color;
-    ctx.fill(fillingRect);
-    mode = false;
-    currentTime = new Date();
+function drawRectFromPoint(x, y, cl) {
+  var fillingRect = new Path2D(); //instead of beginPath
+  fillingRect.moveTo(x, y);
+  fillingRect.lineTo(x+10, y);
+  fillingRect.lineTo(x+10, y+10);
+  fillingRect.lineTo(x, y+10);
+  fillingRect.lineTo(x, y);
+  fillingRect.closePath();
+
+  ctx.fillStyle = cl;
+  ctx.fill(fillingRect);
+  mode = false;
+  currentTime = new Date();
+}
+
+function prefillCanvas() {
+  for (var i = 0; i < prefilledColors.length; i++) {
+    drawRectFromPoint(prefilledColors[i][0], prefilledColors[i][1], prefilledColors[i][2]);
   }
 }
 
@@ -47,3 +65,4 @@ function changeColor(c) {
 }
 
 c.addEventListener("click", drawRect);
+prefillCanvas();
