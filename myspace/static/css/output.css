@@ -11,4 +11,21 @@ canvas {
   border: 1px solid black;
 }
 
+.flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.flex-container button {
+  background-color: blue;
+  border: 2px solid black;
+  color: white;
+  padding: 40px 40px;
+  width: 125px;
+  height: 125px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
 /*# sourceMappingURL=output.css.map */
