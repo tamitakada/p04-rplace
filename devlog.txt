@@ -26,6 +26,10 @@ shyneC -- 2022-05-31 08:12
 shyneC -- 2022-05-31 08:31
 - Started login/register
 
+tamiT -- 2022-05-31 08:40
+- Added pixel upsert into canvas table function
+- Added unique username requirement
+
 emmaB -- 2022-05-31 10:44
 Started creating navbar base file
 
@@ -35,11 +39,19 @@ Fixed padding issues in navbar kind of
 emmaB -- 2022-06-01 08:33
 Added base file to easily add navbar to html files
 
+tamiT -- 2022-06-01 08:40
+- Added login functionality
+- Updated launch codes
+
 shyneC -- 2022-06-02 08:24
 - Specific way of choosing color on design doc
 
-emmaB - 2022-06-02 08:36
+emmaB -- 2022-06-02 08:36
 Can draw on canvas and change color
+
+tamiT -- 2022-06-02 08:40
+- Researched WebSockets with Liesel
+- Added basic WebSocket code for broadcasting messages entered by clients
 
 emmaB -- 2022-06-02 11:10
 Started the toggling process of when you can draw on the canvas
@@ -56,5 +68,13 @@ emmaB -- 2022-06-03 08:37
 shyneC -- 2022-06-03 08:40
 - fxn to check for loggedin (readability + future use)
 
+tamiT -- 2022-6-03 08:40
+- Continued WebSockets research
+- Added template code for WebSockets
+
 emmaB -- 2022-06-03 13:07
 - Added colors to buttons and more css
+
+tamiT -- 2022-06-06 08:40
+- Added function to update database with pixel data sent from client
+- Worked on function to prefill canvas with pixel information from database
