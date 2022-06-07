@@ -78,3 +78,7 @@ emmaB -- 2022-06-03 13:07
 tamiT -- 2022-06-06 08:40
 - Added function to update database with pixel data sent from client
 - Worked on function to prefill canvas with pixel information from database
+
+emmaB -- 2022-06-07 08:28
+Added different colored background colors for buttons
+Hovering on button darkens color

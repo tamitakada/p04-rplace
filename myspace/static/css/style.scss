@@ -17,7 +17,6 @@ border: 1px solid black
   justify-content: center;
   align-items: center;
   button {
-    background-color: blue;
     border: 2px solid black;
     color: white;
     padding: 40px 40px;
@@ -26,5 +25,67 @@ border: 1px solid black
     text-align: center;
     text-decoration: none;
     display: inline-block;
+  }
+  #blueB{
+    background-color: blue;
+    &:hover {
+      background-color: darken(blue, 20%);
+    }
+  }
+  #redB {
+    background-color: red;
+    &:hover {
+      background-color: darken(red, 20%);
+    }
+  }
+  #greenB {
+    background-color: green;
+    &:hover {
+      background-color: darken(green, 10%);
+    }
+  }
+  #yellowB {
+    color: black;
+    background-color: yellow;
+    &:hover {
+      background-color: darken(yellow, 20%);
+    }
+  }
+  #orangeB{
+    background-color: orange;
+    &:hover {
+      background-color: darken(orange, 20%);
+    }
+  }
+  #brownB {
+    background-color: brown;
+    &:hover {
+      background-color: darken(brown, 20%);
+    }
+  }
+  #blackB{
+    background-color: black;
+    &:hover {
+      background-color: lighten(black, 20%);
+    }
+  }
+  #grayB {
+    background-color: gray;
+    &:hover {
+      background-color: darken(gray, 20%);
+    }
+  }
+  #pinkB{
+    background-color: fuchsia;
+    &:hover {
+      background-color: darken(fuchsia, 20%);
+    }
+  }
+  #aquaB {
+    background-color: aqua;
+    color: black;
+    &:hover {
+      background-color: darken(aqua, 20%);
+    }
   }
 }
