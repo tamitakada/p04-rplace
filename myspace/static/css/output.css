@@ -17,7 +17,6 @@ canvas {
   align-items: center;
 }
 .flex-container button {
-  background-color: blue;
   border: 2px solid black;
   color: white;
   padding: 40px 40px;
@@ -26,6 +25,68 @@ canvas {
   text-align: center;
   text-decoration: none;
   display: inline-block;
+}
+.flex-container #blueB {
+  background-color: blue;
+}
+.flex-container #blueB:hover {
+  background-color: #000099;
+}
+.flex-container #redB {
+  background-color: red;
+}
+.flex-container #redB:hover {
+  background-color: #990000;
+}
+.flex-container #greenB {
+  background-color: green;
+}
+.flex-container #greenB:hover {
+  background-color: #004d00;
+}
+.flex-container #yellowB {
+  color: black;
+  background-color: yellow;
+}
+.flex-container #yellowB:hover {
+  background-color: #999900;
+}
+.flex-container #orangeB {
+  background-color: orange;
+}
+.flex-container #orangeB:hover {
+  background-color: #996300;
+}
+.flex-container #brownB {
+  background-color: brown;
+}
+.flex-container #brownB:hover {
+  background-color: #541515;
+}
+.flex-container #blackB {
+  background-color: black;
+}
+.flex-container #blackB:hover {
+  background-color: #333333;
+}
+.flex-container #grayB {
+  background-color: gray;
+}
+.flex-container #grayB:hover {
+  background-color: #4d4d4d;
+}
+.flex-container #pinkB {
+  background-color: fuchsia;
+}
+.flex-container #pinkB:hover {
+  background-color: #990099;
+}
+.flex-container #aquaB {
+  background-color: aqua;
+  color: black;
+}
+.flex-container #aquaB:hover {
+  background-color: #009999;
 }
 
 /*# sourceMappingURL=output.css.map */

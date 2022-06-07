@@ -6,7 +6,7 @@ P4 -- Le Fin (Final Project)
   {% extends "base.html" %}
   {% block title %}My Space{% endblock %}
   {% block content %}
-  
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.4/socket.io.js" integrity="sha512-aMGMvNYu8Ue4G+fHa359jcPb1u+ytAF+P2SCb+PxrjCdO3n3ZTxJ30zuH39rimUggmTwmh2u7wvQsDTHESnmfQ==" crossorigin="anonymous"></script>
   <script>
@@ -54,24 +54,24 @@ P4 -- Le Fin (Final Project)
     <canvas height="600" width="600" id="slate">
       dis dat alt txt tho
     </canvas>
-    <div style="flex-basis:300px">
-    <button onClick="changeColor('blue')">Blue</button>
-    <button onClick="changeColor('red')">Red</button>
-    <button onClick="changeColor('green')">Green</button>
-    <button onClick="changeColor('yellow')">Yellow</button>
-    <button onClick="changeColor('orange')">Orange</button>
-    <button onClick="changeColor('brown')">Brown</button>
-    <button onClick="changeColor('black')">Black</button>
-    <button onClick="changeColor('gray')">Gray</button>
-    <button onClick="changeColor('fuchsia')">Pink</button>
-    <button onClick="changeColor('aqua')">Aqua</button>
+    <div style="flex-bassis:300px">
+    <button id="blueB" onClick="changeColor('blue')">Blue</button>
+    <button id="redB" onClick="changeColor('red')">Red</button>
+    <button id="greenB" onClick="changeColor('green')">Green</button>
+    <button id="yellowB" onClick="changeColor('yellow')">Yellow</button>
+    <button id="orangeB" onClick="changeColor('orange')">Orange</button>
+    <button id="brownB" onClick="changeColor('brown')">Brown</button>
+    <button id="blackB" onClick="changeColor('black')">Black</button>
+    <button id="grayB" onClick="changeColor('gray')">Gray</button>
+    <button id="pinkB" onClick="changeColor('fuchsia')">Pink</button>
+    <button id="aquaB" onClick="changeColor('aqua')">Aqua</button>
     </div>
   </div>
-  
+
   <form id="broadcast" method="POST" action='/'>
     <input type="text" name="broadcast_data" id="broadcast_data" placeholder="Message">
   </form>
-  
+
   <h2>Receive:</h2>
   <div id="log"></div>
 
