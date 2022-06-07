@@ -82,3 +82,6 @@ tamiT -- 2022-06-06 08:40
 emmaB -- 2022-06-07 08:28
 Added different colored background colors for buttons
 Hovering on button darkens color
+
+emmaB -- 2022-06-07 11:46
+Displays the color of the potential pixel after selecting it on index

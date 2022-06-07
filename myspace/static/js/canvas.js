@@ -16,12 +16,12 @@ var drawRect = function(e) {
     var mouseX = e.offsetX;
     var mouseY = e.offsetY;
     console.log("mouseclick registered at ", mouseX, mouseY);
-    
+
     mouseX -= mouseX % 10;
     mouseY -= mouseY % 10;
-    
+
     drawRectFromPoint(mouseX, mouseY, color);
-    
+
     pixelInfo = `(${x}, ${y}, ${color})`;
     console.log(pixelInfo);
     pixelDataBroadcast.value = pixelInfo;
@@ -61,7 +61,9 @@ function checkTime() {
 
 function changeColor(c) {
   color = c;
-  console.log(color);
+  const d = document.getElementById("displayColor");
+  d.innerHTML = c;
+  d.style.color = c;
 }
 
 c.addEventListener("click", drawRect);
