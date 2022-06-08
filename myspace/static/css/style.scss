@@ -13,7 +13,9 @@
   }
 }
 canvas {
-border: 1px solid black
+  border: 1px solid black;
+  // cursor: not-allowed;
+  // pointer-events: none; (for disabling clicking on canvas)
 }
 
 .flex-container{
@@ -90,6 +92,18 @@ border: 1px solid black
     color: black;
     &:hover {
       background-color: darken(aqua, 20%);
+    }
+  }
+  #blockout-message {
+    visibility: hidden;
+    background-color: black;
+    color: white;
+    text-align: center;
+    position: relative;
+    left: 20%;
+    top: 50%;
+    &.show {
+      visibility: visible;
     }
   }
 }

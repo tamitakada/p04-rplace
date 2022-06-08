@@ -41,6 +41,7 @@ function drawRectFromPoint(x, y, cl) {
   ctx.fillStyle = cl;
   ctx.fill(fillingRect);
   mode = false;
+  showMessage();
   currentTime = new Date();
 }
 
@@ -57,6 +58,12 @@ function checkTime() {
   if (timeDiff >= 10) {
     mode = true;
   }
+}
+
+function showMessage() {
+  let m = document.getElementById("blockout-message");
+  m.className = "show";
+  setTimeout(function(){ m.className = m.className.replace("show", ""); }, 10000);
 }
 
 function changeColor(c) {

@@ -92,5 +92,17 @@ canvas {
 .flex-container #aquaB:hover {
   background-color: #009999;
 }
+.flex-container #blockout-message {
+  visibility: hidden;
+  background-color: black;
+  color: white;
+  text-align: center;
+  position: relative;
+  left: 20%;
+  top: 50%;
+}
+.flex-container #blockout-message.show {
+  visibility: visible;
+}
 
 /*# sourceMappingURL=output.css.map */
