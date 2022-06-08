@@ -12,7 +12,9 @@ Traditionally, Flask doesn't support Websockets because of the maintenance requi
 - Before you start following the steps, be sure to activate your virtual environment!
 
 1. Install SocketIO package by typing `pip install flask-socketio` in terminal
-2. Now you have to add Flask-SocketIO to your Flask application by typing this code ```from flask import Flask, render_template
+2. Now you have to add Flask-SocketIO to your Flask application by typing this code at the top of your init file
+  ```python
+    from flask import Flask, render_template
 from flask_socketio import SocketIO
 
 app = Flask(__name__)
@@ -20,7 +22,9 @@ app.config['SECRET_KEY'] = 'secret!'
 socketio = SocketIO(app)
 
 if __name__ == '__main__':
-    socketio.run(app)``` at the top of your init file
+    socketio.run(app)
+  ```
+    
 2. Step, with `inline code`, and/or...
 1. Step, with
     ```
