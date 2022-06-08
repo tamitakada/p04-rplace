@@ -5,6 +5,10 @@
     a{
       color: white;
       padding: 8px;
+      text-decoration: none;
+      &:hover {
+        background-color: darken(#f24201,20%);
+      }
     }
   }
 }
