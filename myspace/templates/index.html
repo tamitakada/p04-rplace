@@ -10,54 +10,59 @@ P4 -- Le Fin (Final Project)
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.4/socket.io.js" integrity="sha512-aMGMvNYu8Ue4G+fHa359jcPb1u+ytAF+P2SCb+PxrjCdO3n3ZTxJ30zuH39rimUggmTwmh2u7wvQsDTHESnmfQ==" crossorigin="anonymous"></script>
   <script>
-  	$(document).ready(function() {
-	    var socket = io();
+  	var socket = io();
 
-	    socket.on('connect', function() {
-		socket.emit('my_event', {data: 'I\'m connected!'});
-	    });
+    socket.on('connect', function() {
+      socket.emit('my_event', {data: 'I\'m connected!'});
+    });
 
-	    socket.on('my_response', function(msg, cb) {
-		$('#log').append('<br>' + $('<div/>').text('Received #' + msg.count + ': ' + msg.data).html());
-		if (cb)
-		    cb();
-	    });
+    socket.on('my_response', function(msg, cb) {
+      $('#log').append('<br>' + $('<div/>').text('Received #' + msg.count + ': ' + msg.data).html());
+      let pixelInfoArr = msg.data.split(', ');
+      if (pixelInfoArr.length === 3) {
+        drawRectFromPoint(
+          Number(pixelInfoArr[0]),
+          Number(pixelInfoArr[1]),
+          pixelInfoArr[2]
+        );
+      }
+      
+      console.log(pixelInfoArr);
+      if (cb)
+          cb();
+    });
 
-	    var ping_pong_times = [];
-	    var start_time;
-	    window.setInterval(function() {
-		start_time = (new Date).getTime();
-		$('#transport').text(socket.io.engine.transport.name);
-		socket.emit('my_ping');
-	    }, 1000);
+    var ping_pong_times = [];
+    var start_time;
+    window.setInterval(function() {
+      start_time = (new Date).getTime();
+      $('#transport').text(socket.io.engine.transport.name);
+      socket.emit('my_ping');
+    }, 1000);
 
-	    socket.on('my_pong', function() {
+	  socket.on('my_pong', function() {
 		var latency = (new Date).getTime() - start_time;
 		ping_pong_times.push(latency);
 		ping_pong_times = ping_pong_times.slice(-30); // keep last 30 samples
 		var sum = 0;
 		for (var i = 0; i < ping_pong_times.length; i++)
 		    sum += ping_pong_times[i];
-		$('#ping-pong').text(Math.round(10 * sum / ping_pong_times.length) / 10);
-	    });
+		    $('#ping-pong').text(Math.round(10 * sum / ping_pong_times.length) / 10);
+	  });
 
-	    $('form#broadcast').submit(function(event) {
-		socket.emit('my_broadcast_event', {data: $('#broadcast_data').val()});
-		return false;
-	    });
-	});
+    function broadcastPixelData() {
+        socket.emit('my_broadcast_event', {data: $('#broadcast_data').val()});
+	  }
   </script>
 
   <h1> MY SPACE</h1>
   <h2> canvas</h2>
   <div class="flex-container">
-    <canvas height="600" width="600" id="slate">
-      dis dat alt txt tho
-    </canvas>
+    <canvas height="600" width="600" id="slate"></canvas>
     <div style="flex-basis:400px">
       <div id="blockout-message">
         NO DRAWING
-        </div>
+      </div>
     <h3> COLOR SELECTED: <div id="displayColor"> </div> </h3>
     <button id="blueB" onClick="changeColor('blue')">Blue</button>
     <button id="redB" onClick="changeColor('red')">Red</button>
@@ -80,7 +85,7 @@ P4 -- Le Fin (Final Project)
   <div id="log"></div>
 
   <script>
-    let prefilledColors = {{ pixels }};
+    let prefilledColors = [];
   </script>
   <script src="{{ url_for('static', filename='js/canvas.js') }}"></script>
 
