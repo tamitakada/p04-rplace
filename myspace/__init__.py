@@ -50,7 +50,7 @@ def index():
 
 @app.route('/edit', methods=['GET','POST'])
 def edit():
-	if session.get('username'): 
+	if session.get('username'):
 		if request.method == "POST":
 			pixelStr = request.form['broadcast_data']
 			pixelItems = pixelStr.split(', ')
