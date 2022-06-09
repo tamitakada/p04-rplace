@@ -22,10 +22,13 @@ var drawRect = function(e) {
 
     drawRectFromPoint(mouseX, mouseY, color);
 
-    pixelInfo = `(${x}, ${y}, ${color})`;
-    console.log(pixelInfo);
+    mode = false;
+    showMessage();
+    currentTime = new Date();
+
+    pixelInfo = `${mouseX}, ${mouseY}, ${color}`;
     pixelDataBroadcast.value = pixelInfo;
-    pixelForm.submit();
+    broadcastPixelData();
   }
 }
 
@@ -40,9 +43,6 @@ function drawRectFromPoint(x, y, cl) {
 
   ctx.fillStyle = cl;
   ctx.fill(fillingRect);
-  mode = false;
-  showMessage();
-  currentTime = new Date();
 }
 
 function prefillCanvas() {
