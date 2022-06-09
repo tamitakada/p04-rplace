@@ -34,34 +34,27 @@ if __name__ == '__main__':
     });
 </script>
 ```
-4. 
+4. After you set up the server and client, you have to tell the server what to do when it receives something from the client. In general, the syntax should look like the code below
+```python
+@socketio.on('message')
+def handle_message(data):
+    print('received message: ' + data)
+```
+5. To send messages from the client, the code syntax could look something like the code below
+```python
+from flask_socketio import send, emit
 
-2. Step, with `inline code`, and/or...
-1. Step, with
-    ```
-    generic code block or terminal command
-    ```
-   and/or...
-    ```javascript
-    var foo = "this that JS tho";
-    ```
-   and/or...
-    ```python
-    print("this that Python tho")
-    ```
-   and/or...
-1. Step, with [hyperlink](https://xkcd.com)s...
+@socketio.on('message')
+def handle_message(message):
+    send(message)
+```
 
 
 ### Resources
 * https://flask-socketio.readthedocs.io/en/latest/
-* thing2
-
 ---
 
 Accurate as of (last update): 2022-07-08
 
 #### Contributors:
 Liesel Wong, PD1  
-
-_Note: the two spaces after each name are important! ( <--burn after reading)  _
