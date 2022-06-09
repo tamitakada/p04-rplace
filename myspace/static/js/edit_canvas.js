@@ -62,6 +62,8 @@ function checkTime() {
   console.log("timeDiff: ", timeDiff);
   if (timeDiff >= 10) {
     mode = true;
+  } else {
+    mode = false;
   }
 }
 

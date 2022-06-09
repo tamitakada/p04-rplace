@@ -100,3 +100,6 @@ tamiT -- 2022-06-08 21:17
 shyneC -- 2022-06-09 12:35
 - changed edit on nav bar to go to edit page
 - added how-to to home page
+
+shyneC -- 2022-06-09 14:17
+- fixed checkTime()
