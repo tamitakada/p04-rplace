@@ -49,32 +49,12 @@ P4 -- Le Fin (Final Project)
 		    sum += ping_pong_times[i];
 		    $('#ping-pong').text(Math.round(10 * sum / ping_pong_times.length) / 10);
 	  });
-
-    function broadcastPixelData() {
-        socket.emit('my_broadcast_event', {data: $('#broadcast_data').val()});
-	  }
   </script>
 
   <h1> MY SPACE</h1>
   <h2> canvas</h2>
   <div class="flex-container">
     <canvas height="600" width="600" id="slate"></canvas>
-    <div style="flex-basis:400px">
-      <div id="blockout-message">
-        NO DRAWING
-      </div>
-    <h3> COLOR SELECTED: <div id="displayColor"> </div> </h3>
-    <button id="blueB" onClick="changeColor('blue')">Blue</button>
-    <button id="redB" onClick="changeColor('red')">Red</button>
-    <button id="greenB" onClick="changeColor('green')">Green</button>
-    <button id="yellowB" onClick="changeColor('yellow')">Yellow</button>
-    <button id="orangeB" onClick="changeColor('orange')">Orange</button>
-    <button id="brownB" onClick="changeColor('brown')">Brown</button>
-    <button id="blackB" onClick="changeColor('black')">Black</button>
-    <button id="grayB" onClick="changeColor('gray')">Gray</button>
-    <button id="pinkB" onClick="changeColor('fuchsia')">Pink</button>
-    <button id="aquaB" onClick="changeColor('aqua')">Aqua</button>
-    </div>
   </div>
 
   <form id="broadcast" method="POST" action='/'>
@@ -85,7 +65,7 @@ P4 -- Le Fin (Final Project)
   <div id="log"></div>
 
   <script>
-    let prefilledColors = [];
+    let prefilledColors = {{ pixels|safe }};
   </script>
   <script src="{{ url_for('static', filename='js/canvas.js') }}"></script>
 
