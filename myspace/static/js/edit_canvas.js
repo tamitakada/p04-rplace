@@ -80,5 +80,9 @@ function changeColor(c) {
   d.style.color = c;
 }
 
+checkTime();
+if (mode === false) {
+  showMessage();
+}
 c.addEventListener("click", drawRect);
 prefillCanvas();

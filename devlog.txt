@@ -103,3 +103,6 @@ shyneC -- 2022-06-09 12:35
 
 shyneC -- 2022-06-09 14:17
 - fixed checkTime()
+
+shyneC -- 2022-06-09 15:56
+- fixed NO DRAWING banner
