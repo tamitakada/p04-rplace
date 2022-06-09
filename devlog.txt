@@ -92,7 +92,11 @@ Edited navbar to look slightly better (no text decoration and hovering effect)
 emmaB -- 2022-06-08 08:37
 Site displays message during 10 second pause for drawing
 
-tamiT -- 2022-6-08 21:17
+tamiT -- 2022-06-08 21:17
 - Added edit route
 - Fixed sockets
 - Edit route gets/sets pixel info in database, also updates info through sockets to live reload for index route
+
+shyneC -- 2022-06-09 12:35
+- changed edit on nav bar to go to edit page
+- added how-to to home page

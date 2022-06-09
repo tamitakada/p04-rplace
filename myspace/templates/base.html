@@ -7,8 +7,9 @@
     </head>
   <div class="nav-bar">
     <nav>
-      <a href="{{ url_for('login')}}">Login</a>
-      <a href="{{url_for('edit')}}">Edit</a>
+      <a href="{{ url_for('index') }}">Home</a>
+      <a href="{{ url_for('login') }}">Login</a>
+      <a href="{{ url_for('edit') }}">Edit</a>
     </nav>
     </div>
     {% block content %}{% endblock %}

@@ -49,8 +49,8 @@ function drawRectFromPoint(x, y, cl) {
 function prefillCanvas() {
   for (var i = 0; i < prefilledColors.length; i++) {
     drawRectFromPoint(
-      Number(prefilledColors[i][0]), 
-      Number(prefilledColors[i][1]), 
+      Number(prefilledColors[i][0]),
+      Number(prefilledColors[i][1]),
       prefilledColors[i][2]
     );
   }
