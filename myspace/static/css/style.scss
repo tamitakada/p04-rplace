@@ -94,6 +94,42 @@ canvas {
       background-color: darken(aqua, 20%);
     }
   }
+  #lightgrayB{
+    background-color: lightgray;
+    &:hover {
+      background-color: darken(lightgray, 20%);
+    }
+  }
+  #purpleB {
+    background-color: purple;
+    &:hover {
+      background-color: darken(purple, 20%);
+    }
+  }
+  #darkcyanB {
+    background-color: darkcyan;
+    &:hover {
+      background-color: darken(darkcyan, 20%);
+    }
+  }
+  #orchidB{
+    background-color: orchid;
+    &:hover {
+      background-color: darken(orchid, 20%);
+    }
+  }
+  #limeB {
+    background-color: lime;
+    &:hover {
+      background-color: darken(lime, 20%);
+    }
+  }
+  #royalB{
+    background-color: royalblue;
+    &:hover {
+      background-color: darken(royalblue, 20%);
+    }
+  }
   #blockout-message {
     visibility: hidden;
     background-color: black;

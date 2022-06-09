@@ -92,6 +92,42 @@ canvas {
 .flex-container #aquaB:hover {
   background-color: #009999;
 }
+.flex-container #lightgrayB {
+  background-color: lightgray;
+}
+.flex-container #lightgrayB:hover {
+  background-color: #a0a0a0;
+}
+.flex-container #purpleB {
+  background-color: purple;
+}
+.flex-container #purpleB:hover {
+  background-color: #1a001a;
+}
+.flex-container #darkcyanB {
+  background-color: darkcyan;
+}
+.flex-container #darkcyanB:hover {
+  background-color: #002525;
+}
+.flex-container #orchidB {
+  background-color: orchid;
+}
+.flex-container #orchidB:hover {
+  background-color: #b52fb0;
+}
+.flex-container #limeB {
+  background-color: lime;
+}
+.flex-container #limeB:hover {
+  background-color: #009900;
+}
+.flex-container #royalB {
+  background-color: royalblue;
+}
+.flex-container #royalB:hover {
+  background-color: #1a3ca2;
+}
 .flex-container #blockout-message {
   visibility: hidden;
   background-color: black;
