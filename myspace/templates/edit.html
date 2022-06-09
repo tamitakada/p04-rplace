@@ -1,0 +1,73 @@
+<!-- tilesstyle (Tami Takada, Liesel Wong, Shyne Choi, Emma Buller)
+SoftDev
+P4 -- Le Fin (Final Project)
+2022-06-26 -->
+
+{% extends "base.html" %}
+{% block title %}My Space{% endblock %}
+{% block content %}
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.4/socket.io.js" integrity="sha512-aMGMvNYu8Ue4G+fHa359jcPb1u+ytAF+P2SCb+PxrjCdO3n3ZTxJ30zuH39rimUggmTwmh2u7wvQsDTHESnmfQ==" crossorigin="anonymous"></script>
+<script>
+    var socket = io();
+
+  socket.on('connect', function() {
+    socket.emit('my_event', {data: 'I\'m connected!'});
+  });
+
+  var ping_pong_times = [];
+  var start_time;
+  window.setInterval(function() {
+    start_time = (new Date).getTime();
+    $('#transport').text(socket.io.engine.transport.name);
+    socket.emit('my_ping');
+  }, 1000);
+
+    socket.on('my_pong', function() {
+      var latency = (new Date).getTime() - start_time;
+      ping_pong_times.push(latency);
+      ping_pong_times = ping_pong_times.slice(-30); // keep last 30 samples
+      var sum = 0;
+      for (var i = 0; i < ping_pong_times.length; i++)
+          sum += ping_pong_times[i];
+          $('#ping-pong').text(Math.round(10 * sum / ping_pong_times.length) / 10);
+    });
+
+  function broadcastPixelData() {
+      socket.emit('my_broadcast_event', {data: $('#broadcast_data').val()});
+    }
+</script>
+
+<h1> MY SPACE</h1>
+<h2> canvas</h2>
+<div class="flex-container">
+  <canvas height="600" width="600" id="slate"></canvas>
+  <div style="flex-basis:400px">
+    <div id="blockout-message">
+      NO DRAWING
+    </div>
+  <h3> COLOR SELECTED: <div id="displayColor"> </div> </h3>
+  <button id="blueB" onClick="changeColor('blue')">Blue</button>
+  <button id="redB" onClick="changeColor('red')">Red</button>
+  <button id="greenB" onClick="changeColor('green')">Green</button>
+  <button id="yellowB" onClick="changeColor('yellow')">Yellow</button>
+  <button id="orangeB" onClick="changeColor('orange')">Orange</button>
+  <button id="brownB" onClick="changeColor('brown')">Brown</button>
+  <button id="blackB" onClick="changeColor('black')">Black</button>
+  <button id="grayB" onClick="changeColor('gray')">Gray</button>
+  <button id="pinkB" onClick="changeColor('fuchsia')">Pink</button>
+  <button id="aquaB" onClick="changeColor('aqua')">Aqua</button>
+  </div>
+</div>
+
+<form id="broadcast" method="POST" action='/edit'>
+  <input type="text" name="broadcast_data" id="broadcast_data" placeholder="Message">
+</form>
+
+<script>
+  let prefilledColors = {{ pixels|safe }};
+</script>
+<script src="{{ url_for('static', filename='js/edit_canvas.js') }}"></script>
+
+{% endblock %}

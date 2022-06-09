@@ -43,22 +43,23 @@ def connect():
             thread = socketio.start_background_task(background_thread)
     emit('my_response', {'data': 'Connected', 'count': 0})
 
-@app.route('/', methods=['GET','POST'])
+@app.route('/')
 def index():
 	pixels = database.get_all_pixels()
-
-	if request.method == "POST":
-		pixelStr = request.form['broadcast_data']
-		pixelItems = pixelStr.split(', ')
-		x = pixelItems[0][1:]
-		y = pixelItems[1]
-		color = pixelItems[2][:-1]
-		database.upsert_pixel(int(x), int(y), color)
 	return render_template('index.html', pixels=pixels)
 
-@app.route('/edit')
+@app.route('/edit', methods=['GET','POST'])
 def edit():
-	if session.get('username'): return render_template('edit.html')
+	if session.get('username'): 
+		if request.method == "POST":
+			pixelStr = request.form['broadcast_data']
+			pixelItems = pixelStr.split(', ')
+			x = pixelItems[0]
+			y = pixelItems[1]
+			color = pixelItems[2]
+			database.upsert_pixel(int(x), int(y), color)
+		pixels = database.get_all_pixels()
+		return render_template('edit.html', pixels=pixels)
 	else: return redirect('/login')
 
 @app.route('/login', methods=['GET','POST'])
@@ -105,4 +106,4 @@ def loggedin():
 if __name__ == '__main__':
         database.db_setup()
         app.debug = True
-        socketio.run(app)
+        socketio.run(app, port=8000)
