@@ -23,7 +23,7 @@ python3 -m venv venv
 pip3 install -r requirements.txt
 ```
 4. Run the app with `python3 myspace/__init__.py`
-5. Visit http://localhost:5000/ to view the app
+5. Visit http://localhost:8000/ to view the app
 
 OR  
 
