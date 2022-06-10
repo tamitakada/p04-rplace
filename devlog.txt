@@ -1,6 +1,9 @@
 tamiT -- 2022-05-27 07:58
 - Added reach goals to DD
 
+lieselW -- 2022-05-27 8:30
+- Edited design doc 
+
 emmaB -- 2022-05-27 08:12
 - Added canvas to index
 
@@ -43,11 +46,17 @@ tamiT -- 2022-06-01 08:40
 - Added login functionality
 - Updated launch codes
 
+lieselW -- 2022-06-01 8:40
+- Websockets research
+
 shyneC -- 2022-06-02 08:24
 - Specific way of choosing color on design doc
 
 emmaB -- 2022-06-02 08:36
 Can draw on canvas and change color
+
+lieselW -- 2022-06-02 8:40
+- Websockets with Tami
 
 tamiT -- 2022-06-02 08:40
 - Researched WebSockets with Liesel
@@ -83,6 +92,9 @@ emmaB -- 2022-06-07 08:28
 Added different colored background colors for buttons
 Hovering on button darkens color
 
+lieselW -- 2022-06-08 5:40
+- Worked on how to
+
 emmaB -- 2022-06-07 11:46
 Displays the color of the potential pixel after selecting it on index
 
@@ -100,6 +112,9 @@ tamiT -- 2022-06-08 21:17
 shyneC -- 2022-06-09 12:35
 - changed edit on nav bar to go to edit page
 - added how-to to home page
+
+lieselW -- 2022-06-09 13:20
+- Worked on how to doc
 
 shyneC -- 2022-06-09 14:17
 - fixed checkTime()
